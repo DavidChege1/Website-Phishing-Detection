@@ -42,7 +42,8 @@ To develop a machine learning model to classify URLs as either legitimate or mal
 
 ### Exploratory Data Analysis
  - Class Distribution
-![download](https://github.com/user-attachments/assets/3fe5fba8-387f-4a6d-8e63-8f090a9dc4db)
+![download](https://github.com/user-attachments/assets/bb248592-ef91-4703-b2ca-4d2061642394)
+
 
  - Feature Correlation
 ![download](https://github.com/user-attachments/assets/c2af8627-484d-41cd-bd36-9ceeef768c83)
