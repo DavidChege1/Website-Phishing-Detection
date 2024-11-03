@@ -4,22 +4,23 @@ import numpy as np
 import pickle
 import plotly.express as px
 
+
+
 # Set page configuration
 st.set_page_config(page_title="Phishing Website Classifier", layout="wide")
 
 # Title and description
 st.title("Phishing Website Classifier")
 st.write("This app uses machine learning to classify websites as legitimate or phishing based on various features.")
-
 # Load the saved model and scaler
 @st.cache_resource
 def load_model():
     try:
-        with open('phishing_model.pkl', 'rb') as file:
+        with open('logistic_regression.pkl', 'rb') as file:
             model = pickle.load(file)
         with open('scaler.pkl', 'rb') as file:
             scaler = pickle.load(file)
-        with open('feature_names.pkl', 'rb') as file:
+        with open('features.pkl', 'rb') as file:
             feature_names = pickle.load(file)
         return model, scaler, feature_names
     except FileNotFoundError:
@@ -38,12 +39,12 @@ user_input['IsResponsive'] = st.sidebar.selectbox('IsResponsive', [0, 1], format
 user_input['NoOfURLRedirect'] = st.sidebar.selectbox('NoOfURLRedirect', [0, 1], format_func=lambda x: 'Yes' if x == 1 else 'No')
 user_input['NoOfSelfRedirect'] = st.sidebar.selectbox('NoOfSelfRedirect', [0, 1], format_func=lambda x: 'Yes' if x == 1 else 'No')
 user_input['HasExternalFormSubmit'] = st.sidebar.selectbox('HasExternalFormSubmit', [0, 1], format_func=lambda x: 'Yes' if x == 1 else 'No')
-user_input['HasSocialNet'] = st.sidebar.selectbox('HasSocialNet', [0, 1], format_func=lambda x: 'Valid' if x == 1 else 'Invalid')
-user_input['HasHiddenFields'] = st.sidebar.selectbox('HasHiddenFields', [0, 1], format_func=lambda x: 'Present' if x == 1 else 'Absent')
+user_input['HasSocialNet'] = st.sidebar.selectbox('HasSocialNet', [0, 1], format_func=lambda x: 'Yes' if x == 1 else 'No')
+user_input['HasHiddenFields'] = st.sidebar.selectbox('HasHiddenFields', [0, 1], format_func=lambda x: 'Yes' if x == 1 else 'No')
 user_input['Bank'] = st.sidebar.selectbox('Bank', [0, 1], format_func=lambda x: 'Yes' if x == 1 else 'No')
-user_input['Pay'] = st.sidebar.selectbox('Pay', [0, 1], format_func=lambda x: 'Present' if x == 1 else 'Absent')
-user_input['Crypto'] = st.sidebar.selectbox('Crypto', [0, 1], format_func=lambda x: 'Present' if x == 1 else 'Absent')
-user_input['HasCopyrightInfo'] = st.sidebar.selectbox('HasCopyrightInfo', [0, 1], format_func=lambda x: 'Present' if x == 1 else 'Absent')
+user_input['Pay'] = st.sidebar.selectbox('Pay', [0, 1], format_func=lambda x: 'Yes' if x == 1 else 'No')
+user_input['Crypto'] = st.sidebar.selectbox('Crypto', [0, 1], format_func=lambda x: 'Yes' if x == 1 else 'No')
+user_input['HasCopyrightInfo'] = st.sidebar.selectbox('HasCopyrightInfo', [0, 1], format_func=lambda x: 'Yes' if x == 1 else 'No')
 
 # Make prediction
 if st.sidebar.button('Classify Website'):
