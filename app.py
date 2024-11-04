@@ -33,18 +33,18 @@ model, scaler, feature_names = load_model()
 st.sidebar.header("Website Features")
 
 user_input = {}
-user_input['HasTitle'] = st.sidebar.selectbox('HasTitle', [0, 1], format_func=lambda x: 'Yes' if x == 1 else 'No')
-user_input['HasFavicon'] = st.sidebar.selectbox('HasFavicon', [0, 1], format_func=lambda x: 'Yes' if x == 1 else 'No')
-user_input['IsResponsive'] = st.sidebar.selectbox('IsResponsive', [0, 1], format_func=lambda x: 'Yes' if x == 1 else 'No')
-user_input['NoOfURLRedirect'] = st.sidebar.selectbox('NoOfURLRedirect', [0, 1], format_func=lambda x: 'Yes' if x == 1 else 'No')
-user_input['NoOfSelfRedirect'] = st.sidebar.selectbox('NoOfSelfRedirect', [0, 1], format_func=lambda x: 'Yes' if x == 1 else 'No')
-user_input['HasExternalFormSubmit'] = st.sidebar.selectbox('HasExternalFormSubmit', [0, 1], format_func=lambda x: 'Yes' if x == 1 else 'No')
-user_input['HasSocialNet'] = st.sidebar.selectbox('HasSocialNet', [0, 1], format_func=lambda x: 'Yes' if x == 1 else 'No')
-user_input['HasHiddenFields'] = st.sidebar.selectbox('HasHiddenFields', [0, 1], format_func=lambda x: 'Yes' if x == 1 else 'No')
-user_input['Bank'] = st.sidebar.selectbox('Bank', [0, 1], format_func=lambda x: 'Yes' if x == 1 else 'No')
-user_input['Pay'] = st.sidebar.selectbox('Pay', [0, 1], format_func=lambda x: 'Yes' if x == 1 else 'No')
-user_input['Crypto'] = st.sidebar.selectbox('Crypto', [0, 1], format_func=lambda x: 'Yes' if x == 1 else 'No')
-user_input['HasCopyrightInfo'] = st.sidebar.selectbox('HasCopyrightInfo', [0, 1], format_func=lambda x: 'Yes' if x == 1 else 'No')
+user_input['HasTitle'] = st.sidebar.selectbox('Website Title', [0, 1], format_func=lambda x: 'Yes' if x == 1 else 'No')
+user_input['HasFavicon'] = st.sidebar.selectbox('Website Icon', [0, 1], format_func=lambda x: 'Yes' if x == 1 else 'No')
+user_input['IsResponsive'] = st.sidebar.selectbox('Is it Responsive', [0, 1], format_func=lambda x: 'Yes' if x == 1 else 'No')
+user_input['NoOfURLRedirect'] = st.sidebar.selectbox('External Redirects', [0, 1], format_func=lambda x: 'Yes' if x == 1 else 'No')
+user_input['NoOfSelfRedirect'] = st.sidebar.selectbox('Internal Redirect', [0, 1], format_func=lambda x: 'Yes' if x == 1 else 'No')
+user_input['HasExternalFormSubmit'] = st.sidebar.selectbox('External Form Submit', [0, 1], format_func=lambda x: 'Yes' if x == 1 else 'No')
+user_input['HasSocialNet'] = st.sidebar.selectbox('Social Net', [0, 1], format_func=lambda x: 'Yes' if x == 1 else 'No')
+user_input['HasHiddenFields'] = st.sidebar.selectbox('Hidden Fields', [0, 1], format_func=lambda x: 'Yes' if x == 1 else 'No')
+user_input['Bank'] = st.sidebar.selectbox('Checks for banking-related keywords', [0, 1], format_func=lambda x: 'Yes' if x == 1 else 'No')
+user_input['Pay'] = st.sidebar.selectbox('Checks for payment-related keywords', [0, 1], format_func=lambda x: 'Yes' if x == 1 else 'No')
+user_input['Crypto'] = st.sidebar.selectbox('Checks for Crypto-related keywords', [0, 1], format_func=lambda x: 'Yes' if x == 1 else 'No')
+user_input['HasCopyrightInfo'] = st.sidebar.selectbox('Has Copyright Information', [0, 1], format_func=lambda x: 'Yes' if x == 1 else 'No')
 
 # Make prediction
 if st.sidebar.button('Classify Website'):
@@ -81,7 +81,7 @@ if st.sidebar.button('Classify Website'):
                  color_discrete_map={'Legitimate': 'green', 'Phishing': 'red'})
     st.plotly_chart(fig)
 
-# Display feature importance
+#Display feature importance
 st.header('Feature Importance')
 importance_df = pd.DataFrame({
     'Feature': feature_names,
@@ -98,7 +98,7 @@ It analyzes various features of the website and makes predictions based on patte
 """)
 
 # Add disclaimer
-st.warning("""
-Disclaimer: This is a demonstration model and should not be used as the sole method for determining website legitimacy.
-Always use multiple security measures and exercise caution when visiting unknown websites.
-""")
+#st.warning("""
+#Disclaimer: This is a demonstration model and should not be used as the sole method for determining website legitimacy.
+#Always use multiple security measures and exercise caution when visiting unknown websites.
+#""")
