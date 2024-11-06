@@ -59,3 +59,29 @@ To develop a machine learning model to classify URLs as either legitimate or mal
    ![download](https://github.com/user-attachments/assets/1660bca1-e430-4218-8170-d93394ff5494)
 
    ![download](https://github.com/user-attachments/assets/84529ec6-1252-41a0-ad7f-d1f83da75b6f)
+
+
+   ### Modeling
+
+   Initially, we used simple models before going into deep learning models for classification.
+   The models we used were:
+- Logistic Regression
+- Decision Tree
+- Random Forest
+- XG Boost
+- Light GBM
+
+  After these, we implemented a deep neural network(DNN).
+
+### Evaluation
+
+Each of the models had a near perfect performance on all key metrics(accuracy, recall, F1 score, ROC-AUC).
+While the models may just be very efficient, this does raise concerns about them possibly overfitting.
+
+### Recommendations
+- We recommend employing additional features to make it possible to observe clearer patterns in the data.
+- As we already have a model, we would recommend deploying it in an enclosed environment to allow us to properly monitor and tune it further.
+- As time passes, we would need to alter the model to improve its performance even after deployment.
+  
+
+
