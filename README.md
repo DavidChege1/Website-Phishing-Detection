@@ -42,23 +42,25 @@ To develop a machine learning model to classify URLs as either legitimate or mal
 
 ### Exploratory Data Analysis
  - Class Distribution
-   ![download](https://github.com/user-attachments/assets/bb248592-ef91-4703-b2ca-4d2061642394)
+![download](https://github.com/user-attachments/assets/bb248592-ef91-4703-b2ca-4d2061642394)
 
 
  - Feature Correlation
-   ![download](https://github.com/user-attachments/assets/c2af8627-484d-41cd-bd36-9ceeef768c83)
+![download](https://github.com/user-attachments/assets/c2af8627-484d-41cd-bd36-9ceeef768c83)
 
  - Feature Distribution
-   ![download](https://github.com/user-attachments/assets/0ee009f8-8468-4e52-84c8-2a8615b6c8dc)
+
+![download](https://github.com/user-attachments/assets/0ee009f8-8468-4e52-84c8-2a8615b6c8dc)
    
-   ![download](https://github.com/user-attachments/assets/47a2c863-a5a4-4e8b-94c9-44ae1087cf08)
+![download](https://github.com/user-attachments/assets/47a2c863-a5a4-4e8b-94c9-44ae1087cf08)
 
  - Feature Engineering
-   ![download](https://github.com/user-attachments/assets/5ec9a7db-2b80-4a8f-a417-72465b062cca)
 
-   ![download](https://github.com/user-attachments/assets/1660bca1-e430-4218-8170-d93394ff5494)
+![download](https://github.com/user-attachments/assets/5ec9a7db-2b80-4a8f-a417-72465b062cca)
 
-   ![download](https://github.com/user-attachments/assets/84529ec6-1252-41a0-ad7f-d1f83da75b6f)
+![download](https://github.com/user-attachments/assets/1660bca1-e430-4218-8170-d93394ff5494)
+
+![download](https://github.com/user-attachments/assets/84529ec6-1252-41a0-ad7f-d1f83da75b6f)
 
 
    ### Modeling
