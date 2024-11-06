@@ -1,10 +1,21 @@
 # Website Phishing Detection
 ![Module-4-image-1024x768-1](https://github.com/user-attachments/assets/895111b5-fb3c-4638-97b9-7df1089321d7)
+
+
 ## Team members
  - David Chege
  - Gladwell Chepkorir
  - Royce Bett
  - Winny Chepkoech
+
+ ## Project Summary
+
+This project focuses on developing a machine learning model to classify websites as phishing or legitimate, aiming to enhance online security by detecting phishing attempts. After gathering and cleaning the data, we conducted Exploratory Data Analysis (EDA) to identify patterns in website features, such as URL length, presence of suspicious characters, and HTTPS usage. These insights informed our feature selection and helped highlight characteristics often associated with phishing sites. 
+
+Six models were trained: Logistic Regression, Decision Tree, Random Forest, LightGBM, XGBoost, and a Deep Neural Network (DNN), with model performance evaluated on accuracy, precision, recall, and F1-score.The models experienced overfitting and we used overfitting reduction techniques to reduce it. All six models performed well with high accuracy of above 90%, but Logistic Regression was chosen for deployment due to its interpretability and efficiency.
+
+To make phishing detection accessible, we deployed a real-time prediction tool using Streamlit. The application allows users to input website features and uses the Logistic Regression model to predict if the site is phishing or legitimate. Future work could improve detection accuracy by integrating more advanced models or real-time data on threats, offering a comprehensive solution for phishing prevention.
+
 
 ## Contents
  - Business Overview
@@ -33,7 +44,7 @@ To develop a machine learning model to classify URLs as either legitimate or mal
 -	Content: Title, TitleMatchScore, HasFavicon, HasSocialNet
 -	Behavior: Redirects (NoOfURLRedirect, NoOfSelfRedirect), popups (NoOfPopup), HasExternalFormSubmit
 -	HTML Elements: NoOfCSS, NoOfJS, NoOfImage
--	Target Variable: label (0 = legitimate, 1 = malicious)
+-	Target Variable: label (1 = legitimate, 0 = malicious)
 
 ### Data Preparation
 - Checking for duplicates
@@ -55,6 +66,8 @@ To develop a machine learning model to classify URLs as either legitimate or mal
    
 ![download](https://github.com/user-attachments/assets/47a2c863-a5a4-4e8b-94c9-44ae1087cf08)
 
+The dataset's features reveal notable outliers, particularly in fields like `NoOfSubDomain` (23,903 outliers), `NoOfDegitsInURL` and `DegitRatioInURL` (both with 20,863), and `IsHTTPS` (22,580), indicating abnormal URL structures. Financial keywords (`Bank`: 12,670, `Pay`: 23,857, `Crypto`: 2,421) also show significant outliers. Indicators of obfuscation (`HasObfuscation`: 192) and suspicious web behavior (`NoOfPopup`: 5,698, `NoOfiFrame`: 14,887) highlight irregular design and content patterns. 
+
 - Feature Engineering
 
 ![download](https://github.com/user-attachments/assets/5ec9a7db-2b80-4a8f-a417-72465b062cca)
@@ -63,8 +76,11 @@ To develop a machine learning model to classify URLs as either legitimate or mal
 
 ![download](https://github.com/user-attachments/assets/84529ec6-1252-41a0-ad7f-d1f83da75b6f)
 
+The feature statistics and outlier removal results provide insights into the dataset's characteristics and cleanup process. Binary feature statistics reveal that most websites lack obfuscation, external form submission, self-redirection, and password fields, while many use HTTPS and have title tags, indicating typical attributes in legitimate websites. However, some features, like the presence of copyright information and social network links, are relatively balanced. 
 
-   ### Modeling
+Outlier removal focused on extreme values in various numerical columns, removing a significant 70.79% of rows, bringing the dataset to 29,210 rows. Key features affected include "NoOfSubDomain," "NoOfDegitsInURL," and "LineOfCode," suggesting these metrics had substantial variance and extreme values, likely from uncommon or malicious URLs. After outlier removal, the dataset should better reflect a standard distribution, enabling more reliable analysis. Visualizing pre- and post-cleaning distributions will highlight these adjustments and ensure data quality for modeling.
+
+### Modeling
 
 Initially, we used simple models before going into deep learning models for classification.
 The models we used were:
@@ -74,14 +90,21 @@ The models we used were:
 - XG Boost
 - Light GBM
 
-After these, we implemented a deep neural network(DNN).
+After these, we implemented and tuned a deep neural network(DNN) to reduce overfitting.
+
+### Deployment
+
+It will be made in Streamlit and deployed in a cloud environment.
 
 ### Evaluation
 
-Each of the models had a near perfect performance on all key metrics(accuracy, recall, F1 score, ROC-AUC).
-While the models may just be very efficient, this does raise concerns about them possibly overfitting.
+ - Each of the models performs very well with indications of overfitting.
+ - The Deep Neural Network achieves precision, recall, and F1-scores around 0.97 almost similar to Logistic Regression.
+ - Logistic Regression model is a more practical choice for deployment because it is very simple and easy to deploy.
 
 ### Recommendations
+
+- Adding a website checker tool that extracts information from the website to increase accuracy.
 - We recommend employing additional features to make it possible to observe clearer patterns in the data.
 - As we already have a model, we would recommend deploying it in an enclosed environment to allow us to properly monitor and tune it further.
 - As time passes, we would need to alter the model to improve its performance even after deployment.
