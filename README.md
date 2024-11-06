@@ -63,15 +63,15 @@ To develop a machine learning model to classify URLs as either legitimate or mal
 
    ### Modeling
 
-   Initially, we used simple models before going into deep learning models for classification.
-   The models we used were:
+Initially, we used simple models before going into deep learning models for classification.
+The models we used were:
 - Logistic Regression
 - Decision Tree
 - Random Forest
 - XG Boost
 - Light GBM
 
-  After these, we implemented a deep neural network(DNN).
+After these, we implemented a deep neural network(DNN).
 
 ### Evaluation
 
