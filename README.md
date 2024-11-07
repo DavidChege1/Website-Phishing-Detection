@@ -64,19 +64,13 @@ The top 20 feature correlations show that some features, like URL length and the
 
 - Feature Distribution
 
-![download](https://github.com/user-attachments/assets/0ee009f8-8468-4e52-84c8-2a8615b6c8dc)
-   
-![download](https://github.com/user-attachments/assets/47a2c863-a5a4-4e8b-94c9-44ae1087cf08)
+The feature types summary breaks down the dataset into three main categories: binary features (e.g., *IsDomainIP*, *IsHTTPS*), which have values of 0 or 1 indicating the presence or absence of certain traits; numerical features (e.g., *URLLength*, *DomainLength*, *NoOfImage*), which have a wide range of continuous or count-based values; and categorical features (e.g., *URL*, *Domain*, *TLD*), which include unique or distinct entries. This classification helps in selecting appropriate preprocessing and modeling techniques tailored to each feature type.
+
+- Outlier Analysis
 
 The dataset's features reveal notable outliers, particularly in fields like `NoOfSubDomain` (23,903 outliers), `NoOfDegitsInURL` and `DegitRatioInURL` (both with 20,863), and `IsHTTPS` (22,580), indicating abnormal URL structures. Financial keywords (`Bank`: 12,670, `Pay`: 23,857, `Crypto`: 2,421) also show significant outliers. Indicators of obfuscation (`HasObfuscation`: 192) and suspicious web behavior (`NoOfPopup`: 5,698, `NoOfiFrame`: 14,887) highlight irregular design and content patterns. 
 
 - Feature Engineering
-
-![download](https://github.com/user-attachments/assets/5ec9a7db-2b80-4a8f-a417-72465b062cca)
-
-![download](https://github.com/user-attachments/assets/1660bca1-e430-4218-8170-d93394ff5494)
-
-![download](https://github.com/user-attachments/assets/84529ec6-1252-41a0-ad7f-d1f83da75b6f)
 
 The feature statistics and outlier removal results provide insights into the dataset's characteristics and cleanup process. Binary feature statistics reveal that most websites lack obfuscation, external form submission, self-redirection, and password fields, while many use HTTPS and have title tags, indicating typical attributes in legitimate websites. However, some features, like the presence of copyright information and social network links, are relatively balanced. 
 
