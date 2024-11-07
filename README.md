@@ -60,6 +60,8 @@ To develop a machine learning model to classify URLs as either legitimate or mal
 
 ![download](https://github.com/user-attachments/assets/c2af8627-484d-41cd-bd36-9ceeef768c83)
 
+The top 20 feature correlations show that some features, like URL length and the number of letters in the URL, are very similar and could overlap in the information they provide. Also, features related to how well the URL matches certain patterns or includes certain types of information (like social media links or obfuscation) have strong relationships with each other and the label, which could be useful for models analyzing URLs.
+
 - Feature Distribution
 
 ![download](https://github.com/user-attachments/assets/0ee009f8-8468-4e52-84c8-2a8615b6c8dc)
