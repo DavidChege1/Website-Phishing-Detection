@@ -73,7 +73,8 @@ The dataset's features reveal notable outliers, particularly in fields like `NoO
 
 The feature distribution analysis and outlier removal results provide insights into the dataset's characteristics and cleanup process. Binary feature statistics reveal that most websites lack obfuscation, external form submission, self-redirection, and password fields, while many use HTTPS and have title tags, indicating typical attributes in legitimate websites. However, some features, like the presence of copyright information and social network links, are relatively balanced. 
 
-**Outlier removal** focused on extreme values in various numerical columns, removing a significant 70.79% of rows, bringing the dataset to 29,210 rows. Key features affected include "NoOfSubDomain," "NoOfDegitsInURL," and "LineOfCode," suggesting these metrics had substantial variance and extreme values, likely from uncommon or malicious URLs. After outlier removal, the dataset should better reflect a standard distribution, enabling more reliable analysis. Visualizing pre- and post-cleaning distributions will highlight these adjustments and ensure data quality for modeling.**Dealing with Multi colinearity** using the Correlation Matrix with a threshhold of 0.9, removed 6 features, bringing the dataset to 49 features.
+**Outlier removal** focused on extreme values in various numerical columns, removing a significant 70.79% of rows, bringing the dataset to 29,210 rows. Key features affected include "NoOfSubDomain," "NoOfDegitsInURL," and "LineOfCode," suggesting these metrics had substantial variance and extreme values, likely from uncommon or malicious URLs. After outlier removal, the dataset should better reflect a standard distribution, enabling more reliable analysis. Visualizing pre- and post-cleaning distributions will highlight these adjustments and ensure data quality for modeling.
+**Dealing with Multi colinearity** using the Correlation Matrix with a threshhold of 0.9, removed 6 features, bringing the dataset to 49 features.
 
 ### Modeling
 
@@ -104,5 +105,20 @@ It will be made in Streamlit and deployed in a cloud environment.
 - As we already have a model, we would recommend deploying it in an enclosed environment to allow us to properly monitor and tune it further.
 - As time passes, we would need to alter the model to improve its performance even after deployment.
   
+### Future Recommendations
+
+- **Data Collection and Quality**: Expand the dataset to include more diverse and recent examples of both legitimate and phishing websites to enhance model robustness. Ensuring the data is updated frequently will help the model adapt to evolving phishing tactics.
+
+- **Feature Engineering and Analysis**: Conduct deeper feature engineering to extract more informative features, such as URL characteristics, domain age, and SSL certificate details. This can potentially boost model performance while providing better insights into phishing patterns.
+
+- **Deployment and Monitoring**: Implement a strong deployment pipeline with real-time monitoring to identify any performance drifts. Establish mechanisms for periodic model retraining based on feedback loops to ensure the system remains effective in identifying new threats.
+
+- **User Awareness and Education**: Complement the technical solution with user education initiatives, teaching individuals how to recognize common phishing tactics and avoid risky behaviors. This holistic approach reinforces cybersecurity beyond automated detection.
+
+- **Security and Compliance**: Ensure that the system adheres to data security and privacy regulations, protecting any sensitive information handled during the detection process. Adopting secure development practices and regular audits will help maintain trust and compliance.
+
+- **Scalability and Integration**: Design the system with scalability in mind, allowing it to handle increasing web traffic as needed. Integrating the solution seamlessly with existing security infrastructure, such as browser extensions or email filters, can maximize its impact and ease of use.
+
+- **Collaboration with Cybersecurity Experts**: Work closely with cybersecurity professionals to stay updated on emerging trends and incorporate their expertise into refining the detection criteria. This collaboration can help ensure the model remains relevant and effective against sophisticated phishing attempts.
 
 
