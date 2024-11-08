@@ -18,7 +18,6 @@ To make phishing detection accessible, we deployed a real-time prediction tool u
 
 
 ## Contents
- - Business Overview
  - Business Understanding
  - Data Understanding
  - Data Preparation
@@ -26,7 +25,7 @@ To make phishing detection accessible, we deployed a real-time prediction tool u
  - Modeling and Evaluation
 
 
-#### Business Understanding
+### Business Understanding
 Phishing is a type of cyberattack where one impersonates trusted people or parties in an attempt to gain sensitive information such as usernames, passwords, bank details etc.
 Things are becoming increasingly hosted online, which widens the pool of targets, while simultaneously empowering perpetrators further; with schemes going from simple ones targeted at individuals to more elaborate ones that go as far as targeting multi-national corporations.
 
