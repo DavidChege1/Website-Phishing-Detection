@@ -33,9 +33,9 @@ model, scaler, feature_names = load_model()
 st.sidebar.header("Website Features")
 
 user_input = {}
-user_input['HasTitle'] = st.sidebar.selectbox('Website Title', [0, 1], format_func=lambda x: 'Yes' if x == 1 else 'No')
-user_input['HasFavicon'] = st.sidebar.selectbox('Website Icon', [0, 1], format_func=lambda x: 'Yes' if x == 1 else 'No')
-user_input['IsResponsive'] = st.sidebar.selectbox('Is it Responsive', [0, 1], format_func=lambda x: 'Yes' if x == 1 else 'No')
+user_input['HasTitle'] = st.sidebar.selectbox('Website Title', [0, 1], format_func=lambda x: 'Yes' if x == 0 else 'No')
+user_input['HasFavicon'] = st.sidebar.selectbox('Website Icon', [0, 1], format_func=lambda x: 'Yes' if x == 0 else 'No')
+user_input['IsResponsive'] = st.sidebar.selectbox('Is it Responsive', [0, 1], format_func=lambda x: 'Yes' if x == 0 else 'No')
 user_input['NoOfURLRedirect'] = st.sidebar.selectbox('External Redirects', [0, 1], format_func=lambda x: 'Yes' if x == 1 else 'No')
 user_input['NoOfSelfRedirect'] = st.sidebar.selectbox('Internal Redirect', [0, 1], format_func=lambda x: 'Yes' if x == 1 else 'No')
 user_input['HasExternalFormSubmit'] = st.sidebar.selectbox('External Form Submit', [0, 1], format_func=lambda x: 'Yes' if x == 1 else 'No')
